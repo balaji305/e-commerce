@@ -12,6 +12,7 @@ import {
 } from "react-bootstrap";
 import Message from "../components/Message";
 import { addToCart, removeFromCart } from "../actions/cartActions";
+import Meta from "../components/Meta";
 
 const CartScreen = ({ match }) => {
   const history = useNavigate();
@@ -47,6 +48,7 @@ const CartScreen = ({ match }) => {
 
   return (
     <Row>
+      <Meta title="Shopping Cart | ProShop" />
       <Col md={8}>
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (

@@ -7,6 +7,7 @@ import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
 import { createProduct } from "../actions/productActions";
 import { PRODUCT_CREATE_RESET } from "../constants/productConstants";
+import Meta from "../components/Meta";
 
 const ProductCreateScreen = () => {
   const [name, setName] = useState("");
@@ -20,10 +21,16 @@ const ProductCreateScreen = () => {
   const history = useNavigate();
   const dispatch = useDispatch();
 
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
   const productCreate = useSelector((state) => state.productCreate);
   const { loading, error, success } = productCreate;
 
   useEffect(() => {
+    if (!userInfo?.isAdmin) {
+      history("/login");
+    }
     if (success) {
       dispatch({ type: PRODUCT_CREATE_RESET });
       history("/admin/productlist");
@@ -46,6 +53,7 @@ const ProductCreateScreen = () => {
   };
   return (
     <>
+      <Meta title="Create Product | ProShop" />
       <Link to="/admin/productlist" className="btn btn-light my-3">
         Go Back
       </Link>

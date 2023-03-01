@@ -7,6 +7,7 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { getUserDetails, updateUserProfile } from "../actions/userActions";
 import { listMyOrders } from "../actions/orderActions";
+import Meta from "../components/Meta";
 
 const ProfileScreen = () => {
   const [name, setName] = useState("");
@@ -54,6 +55,7 @@ const ProfileScreen = () => {
   };
   return (
     <Row>
+      <Meta title="Profile | ProShop" />
       <Col md={3}>
         <h2>User Profile</h2>
         {message && <Message variant="danger">{message}</Message>}

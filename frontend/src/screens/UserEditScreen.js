@@ -7,6 +7,7 @@ import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
 import { getUserDetails, updateUser } from "../actions/userActions";
 import { USER_UPDATE_RESET } from "../constants/userConstants";
+import Meta from "../components/Meta";
 
 const UserEditScreen = () => {
   const { id } = useParams();
@@ -49,6 +50,7 @@ const UserEditScreen = () => {
   };
   return (
     <>
+      <Meta title="Edit User | ProShop" />
       <Link to="/admin/userlist" className="btn btn-light my-3">
         Go Back
       </Link>
