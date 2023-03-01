@@ -5,6 +5,8 @@ node_modules
 node_modules/
 uploads
 uploads/
+data
+data/
 /.pnp
 .pnp.js
 
