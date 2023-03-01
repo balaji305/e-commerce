@@ -5,9 +5,9 @@ import { Form, Button, Row, Col, Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
+import Meta from "../components/Meta";
 import { getUserDetails, updateUserProfile } from "../actions/userActions";
 import { listMyOrders } from "../actions/orderActions";
-import Meta from "../components/Meta";
 
 const ProfileScreen = () => {
   const [name, setName] = useState("");

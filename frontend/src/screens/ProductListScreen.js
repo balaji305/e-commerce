@@ -6,9 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import Paginate from "../components/Paginate";
+import Meta from "../components/Meta";
 import { listProducts, deleteProduct } from "../actions/productActions";
 import { PRODUCT_CREATE_RESET } from "../constants/productConstants";
-import Meta from "../components/Meta";
 
 const ProductListScreen = () => {
   const pageNumber = useParams().pageNumber || 1;
@@ -32,7 +32,7 @@ const ProductListScreen = () => {
     } else {
       history("/login");
     }
-  }, [dispatch, history, userInfo, successDelete]);
+  }, [dispatch, history, userInfo, successDelete, pageNumber]);
 
   const deleteHandle = (id) => {
     if (window.confirm("Are You Sure")) {

@@ -6,9 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
+import Meta from "../components/Meta";
 import { listProductDetails, updateProduct } from "../actions/productActions";
 import { PRODUCT_UPDATE_RESET } from "../constants/productConstants";
-import Meta from "../components/Meta";
 
 const ProductEditScreen = () => {
   const { id } = useParams();
@@ -52,7 +52,7 @@ const ProductEditScreen = () => {
         setCountInStock(product.countInStock);
       }
     }
-  }, [dispatch, id, product, successUpdate]);
+  }, [dispatch, id, product, successUpdate, history]);
 
   const uploadFileHandler = async (e) => {
     const file = e.target.files[0];

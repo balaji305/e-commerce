@@ -14,7 +14,6 @@ import Loader from "../components/Loader";
 import Message from "../components/Message";
 import Rating from "../components/Rating";
 import Meta from "../components/Meta";
-
 import {
   listProductDetails,
   createProductReview,

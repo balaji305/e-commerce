@@ -11,8 +11,8 @@ import {
   Card,
 } from "react-bootstrap";
 import Message from "../components/Message";
-import { addToCart, removeFromCart } from "../actions/cartActions";
 import Meta from "../components/Meta";
+import { addToCart, removeFromCart } from "../actions/cartActions";
 
 const CartScreen = ({ match }) => {
   const history = useNavigate();

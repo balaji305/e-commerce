@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
+import Meta from "../components/Meta";
 import { createProduct } from "../actions/productActions";
 import { PRODUCT_CREATE_RESET } from "../constants/productConstants";
-import Meta from "../components/Meta";
 
 const ProductCreateScreen = () => {
   const [name, setName] = useState("");
@@ -35,7 +35,7 @@ const ProductCreateScreen = () => {
       dispatch({ type: PRODUCT_CREATE_RESET });
       history("/admin/productlist");
     }
-  }, [dispatch, success]);
+  }, [dispatch, success, userInfo?.isAdmin, history]);
 
   const submitHandler = (e) => {
     e.preventDefault();

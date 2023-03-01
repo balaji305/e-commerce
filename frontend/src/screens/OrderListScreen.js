@@ -5,8 +5,8 @@ import { Table, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
-import { listOrders } from "../actions/orderActions";
 import Meta from "../components/Meta";
+import { listOrders } from "../actions/orderActions";
 
 const OrderListScreen = () => {
   const dispatch = useDispatch();

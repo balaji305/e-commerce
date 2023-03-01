@@ -6,6 +6,7 @@ import { PayPalButton } from "react-paypal-button-v2";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
+import Meta from "../components/Meta";
 import {
   getOrderDetails,
   payOrder,
@@ -15,7 +16,6 @@ import {
   ORDER_PAY_RESET,
   ORDER_DELIVER_RESET,
 } from "../constants/orderConstants";
-import Meta from "../components/Meta";
 
 const OrderScreen = () => {
   const { id } = useParams();

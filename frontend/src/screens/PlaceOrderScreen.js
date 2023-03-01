@@ -4,8 +4,8 @@ import { Button, Row, Col, Image, ListGroup, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import CheckoutSteps from "../components/CheckoutSteps";
 import Message from "../components/Message";
-import { createOrder } from "../actions/orderActions";
 import Meta from "../components/Meta";
+import { createOrder } from "../actions/orderActions";
 
 const PlaceOrderScreen = () => {
   const dispatch = useDispatch();
