@@ -18,6 +18,7 @@ import UserEditScreen from "./screens/UserEditScreen";
 import ProductListScreen from "./screens/ProductListScreen";
 import ProductEditScreen from "./screens/ProductEditScreen";
 import ProductCreateScreen from "./screens/ProductCreateScreen";
+import OrderListScreen from "./screens/OrderListScreen";
 
 function App() {
   return (
@@ -37,6 +38,12 @@ function App() {
             <Route
               path="/admin/productlist"
               element={<ProductListScreen />}
+              exact
+            ></Route>
+            <Route
+              path="/admin/productlist/page/:pageNumber"
+              element={<ProductListScreen />}
+              exact
             ></Route>
             <Route
               path="/admin/product/:id/edit"
@@ -46,12 +53,30 @@ function App() {
               path="/admin/createproduct"
               element={<ProductCreateScreen />}
             ></Route>
+            <Route
+              path="/admin/orderlist"
+              element={<OrderListScreen />}
+            ></Route>
             <Route path="/product/:id" element={<ProductScreen />}></Route>
             <Route path="/cart/:id?" element={<CartScreen />}></Route>
             <Route path="/shipping" element={<ShippingScreen />}></Route>
             <Route path="/payment" element={<PaymentScreen />}></Route>
             <Route path="/placeorder" element={<PlaceOrderScreen />}></Route>
             <Route path="/orders/:id" element={<OrderScreen />}></Route>
+            <Route
+              path="/search/:keyword"
+              element={<HomeScreen />}
+              exact
+            ></Route>
+            <Route
+              path="/page/:pageNumber"
+              element={<HomeScreen />}
+              exact
+            ></Route>
+            <Route
+              path="/search/:keyword/page/:pageNumber"
+              element={<HomeScreen />}
+            ></Route>
             <Route path="/" element={<HomeScreen />}></Route>
           </Routes>
         </Container>
