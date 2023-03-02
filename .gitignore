@@ -7,8 +7,6 @@ node_modules/
 .pnp.js
 
 # unwanted
-uploads
-uploads/
 data
 data/
 .vscode
