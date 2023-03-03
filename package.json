@@ -2,8 +2,7 @@
   "name": "mern-stack",
   "version": "1.0.0",
   "description": "Shopify App",
-  "main": "index.js",
-  "type": "module",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server",

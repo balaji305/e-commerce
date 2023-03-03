@@ -1,5 +1,5 @@
-import Product from "../models/ProductModel.js";
-import asyncHandler from "express-async-handler";
+const Product = require("../models/ProductModel");
+const asyncHandler = require("express-async-handler");
 
 const getProducts = asyncHandler(async (req, res) => {
   const pageSize = 8;
@@ -129,7 +129,7 @@ const getTopProducts = asyncHandler(async (req, res) => {
   res.json(products);
 });
 
-export {
+module.exports = {
   getProducts,
   getProductById,
   deleteProductById,

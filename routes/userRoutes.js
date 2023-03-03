@@ -1,5 +1,5 @@
-import express from "express";
-import {
+const express = require("express");
+const {
   authUser,
   registerUser,
   getUserProfile,
@@ -8,8 +8,8 @@ import {
   deleteUserById,
   getUserById,
   updateUserById,
-} from "../controllers/userController.js";
-import { protect, admin } from "../middleware/authMiddleWare.js";
+} = require("../controllers/userController");
+const { protect, admin } = require("../middleware/authMiddleWare");
 
 const router = express.Router();
 
@@ -25,4 +25,4 @@ router
   .get(protect, admin, getUserById)
   .put(protect, admin, updateUserById);
 
-export default router;
+module.exports = router;

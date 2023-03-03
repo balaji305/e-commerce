@@ -1,13 +1,13 @@
-import express from "express";
-import {
+const express = require("express");
+const {
   addOrderItems,
   getOrderById,
   updateOrderToPaid,
   getMyOrders,
   getOrders,
   updateOrderToDelivered,
-} from "../controllers/orderController.js";
-import { protect, admin } from "../middleware/authMiddleWare.js";
+} = require("../controllers/orderController");
+const { protect, admin } = require("../middleware/authMiddleWare");
 
 const router = express.Router();
 
@@ -17,4 +17,4 @@ router.route("/:id").get(protect, getOrderById);
 router.route("/:id/pay").put(protect, updateOrderToPaid);
 router.route("/:id/deliver").put(protect, updateOrderToDelivered);
 
-export default router;
+module.exports = router;
