@@ -23,11 +23,14 @@ const PlaceOrderScreen = () => {
     Math.round(Number(0.15 * cart.itemsPrice.toFixed(2)) * 100) / 100
   ).toFixed(2);
 
-  cart.totalPrice = (
+  cart.totalPrice =
     Number(cart.itemsPrice) +
     Number(cart.shippingPrice) +
-    Number(cart.taxPrice)
-  ).toFixed(2);
+    Number(cart.taxPrice);
+
+  cart.totalPrice = Math.round((cart.totalPrice + Number.EPSILON) * 100) / 100;
+
+  console.log(cart.totalPrice);
 
   const orderCreate = useSelector((state) => state.orderCreate);
   const { order, success, error } = orderCreate;
